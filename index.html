@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Heartbeat Girl ✨❤️</title>
+    <style>
+        /* Base Styles & Theme Colors */
+        :root {
+            --primary-pink: #ffb3c6;
+            --dark-pink: #ff4d6d;
+            --soft-purple: #e2ceff;
+            --text-color: #4a3b4e;
+            --background-start: #ffeef2;
+            --background-end: #f3e8ff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, var(--background-start) 0%, var(--background-end) 100%);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 20px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* --- ANIMATION 1: Floating Elements Background --- */
+        #animation-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .floating-element {
+            position: absolute;
+            bottom: -50px;
+            opacity: 0;
+            user-select: none;
+            animation: floatUp ease-in infinite;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.7; }
+            90% { opacity: 0.7; }
+            100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* --- Main Content Styling --- */
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(255, 179, 198, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            text-align: center;
+            z-index: 2;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Music Info Box */
+        .music-box {
+            margin-bottom: 25px;
+            background: rgba(243, 232, 255, 0.7);
+            padding: 12px 20px;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid var(--primary-pink);
+        }
+
+        .music-box p {
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #724099;
+        }
+
+        /* --- Photo & Dancing Hearts Wrapper --- */
+        .photo-wrapper {
+            position: relative;
+            display: inline-block;
+            margin: 0 auto 30px auto;
+        }
+
+        /* --- ANIMATION 2: Photo Frame Pulse & Glow --- */
+        .photo-container {
+            width: 240px;
+            height: 300px;
+            border-radius: 20px;
+            position: relative;
+            border: 6px solid #fff;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            animation: framePulse 3s infinite;
+        }
+
+        @keyframes framePulse {
+            0%, 100% { box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1), 0 0 0px rgba(255, 179, 198, 0); }
+            50% { box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1), 0 0 15px rgba(255, 77, 109, 0.6); }
+        }
+
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 14px;
+        }
+
+        /* Ribbon Wiggle Animation */
+        .ribbon {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 2rem;
+            z-index: 3;
+            animation: ribbonWiggle 2s ease-in-out infinite;
+            transform-origin: bottom left;
+        }
+
+        @keyframes ribbonWiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(10deg); }
+            75% { transform: rotate(-10deg); }
+        }
+
+        /* --- ANIMATION 3: Dancing Hearts Side-by-Side --- */
+        .dancing-heart {
+            position: absolute;
+            top: 40%;
+            font-size: 2.5rem;
+            user-select: none;
+            z-index: 4;
+        }
+
+        .heart-left {
+            left: -50px;
+            animation: danceLeft 1.5s ease-in-out infinite alternate;
+        }
+
+        .heart-right {
+            right: -50px;
+            animation: danceRight 1.5s ease-in-out infinite alternate;
+            animation-delay: 0.3s; /* Slightly desynced for natural look */
+        }
+
+        @keyframes danceLeft {
+            0% { transform: translateY(0) scale(1) rotate(-10deg); }
+            100% { transform: translateY(-15px) scale(1.1) rotate(15deg); }
+        }
+
+        @keyframes danceRight {
+            0% { transform: translateY(0) scale(1) rotate(10deg); }
+            100% { transform: translateY(-15px) scale(1.1) rotate(-15deg); }
+        }
+
+        /* Letter Text Styling */
+        .letter-content {
+            text-align: left;
+            line-height: 1.8;
+            font-size: 1.05rem;
+            white-space: pre-line;
+            margin-bottom: 25px;
+            padding: 0 10px;
+            position: relative;
+        }
+
+        /* Footer Text Pulse */
+        .footer-emojis {
+            font-size: 1.5rem;
+            letter-spacing: 5px;
+            margin-top: 15px;
+            color: var(--dark-pink);
+            animation: textPulse 2s infinite;
+        }
+
+        @keyframes textPulse {
+            0%, 100% { opacity: 0.8; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="animation-container"></div>
+
+    <div class="container">
+        
+        <div class="music-box">
+            <iframe width="0" height="0" src="https://www.youtube.com/embed/kPhpHvnnn0Q?autoplay=1&loop=1&playlist=kPhpHvnnn0Q" frameborder="0" allow="autoplay"></iframe>
+            <span style="font-size: 1.2rem;">🎵</span>
+            <p>Background music is playing ✨</p>
+        </div>
+
+        <div class="photo-wrapper">
+            <div class="dancing-heart heart-left">💖</div>
+            
+            <div class="photo-container">
+                <span class="ribbon">🎀</span>
+                <img src="1000011895.jpg" alt="My Beautiful Girl">
+            </div>
+            
+            <div class="dancing-heart heart-right">💜</div>
+        </div>
+
+        <div class="letter-content">
+Hey My lovely preety my heartbeat girl.
+
+So, today is 28th May, and 2 Months ago we become couple and promised to marry each other and love each till the end of our life ✨❤️🎀.
+
+So, it's 2 month when we become couple ✨💗💜. Sometimes I feel like a toxic man to you, Bcz I ask too much like for ss, for pic, for kiss, for vm and for accounts and in these fews day it hurts you too much. 
+
+And I am sorry for that what I did. I know just a sorry can't fix anything, that's why from today I promise you I will never ask for a pic a kiss a vm or any accounts, doesn't matter what happened but I will never ask for it and hurt u and u know what's the difference between a couple waits years for marry and a couple break in few months. Bcz they have patience they fix things, I know sorry can't fix it but we can fix it, 
+
+So, doesn't matter you are with me or not. I will love you and even u love someone or marry someone I will still love you, I will still wait for your message every morning.✨💗💜🫶🏻
+
+And ofcourse, I will not denied that, I will always fight with you may be some time it hurts you but my intension was never like that to hurt to. And after worest to worest fight I will come to you, Even if u don't give me permission to come, still I will come to you.
+
+Well, ofcourse I love you soooooo muchhhhhh 💗 💜 🫶🏻. That will never change for me, EVEN IF U HATE ME TOO MUCH, 
+
+SO, now i am going to end this letter 💌 ✉️ 
+
+Have a good day 💝. I love you soooooo muchhhhhh 💗 💜 ✨ 🎀 
+
+My baacha 💋💌💜
+        </div>
+
+        <div class="footer-emojis">💗 💜 ✨ 🎀 🫶🏻</div>
+    </div>
+
+    <script>
+        const container = document.getElementById('animation-container');
+        const shapes = ['❤️', '💖', '💗', '💓', '✨', '💜', '🌸'];
+
+        function createFloatingElement() {
+            const element = document.createElement('div');
+            element.classList.add('floating-element');
+            element.innerText = shapes[Math.floor(Math.random() * shapes.length)];
+            element.style.left = Math.random() * 100 + 'vw';
+            
+            const size = Math.random() * 20 + 15;
+            element.style.fontSize = size + 'px';
+            
+            const duration = Math.random() * 4 + 5;
+            element.style.animationDuration = duration + 's';
+            
+            container.appendChild(element);
+            
+            setTimeout(() => {
+                element.remove();
+            }, duration * 1000); 
+        }
+
+        setInterval(createFloatingElement, 300);
+    </script>
+</body>
+</html>
